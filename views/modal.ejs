@@ -1,0 +1,101 @@
+ <!-- MODAL BOX  -->
+ <!-- <div class="blur-box" id="modal_regi"> -->
+    <div class="sign-up-card">
+        <!-- alert start-->
+        <% if (message) { %>
+          <div class="alert alert-success alert-dismissible fade show registarPage" role="alert">
+              <strong>note :</strong> <%= message %> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            
+
+          
+         <% } %>
+
+             <!-- alert end-->
+      <div class="sign-up-header">
+        <div class="sign-up-content">
+          <span>Sign Up</span>
+          <span>It's quick and easy.</span>
+           
+        </div>
+        <button class="cross-btn"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/C6QZ-pcv3Bd.png" alt="" /></button>
+      </div>
+      <div class="sign-up-body">
+        <form action="/registar" method="post">
+          <div class="reg-form reg-form-inline">
+            <input name="first_name" type="text" placeholder="First Name" />
+            <input name="last_name" type="text" placeholder="Surname" />
+          </div>
+          <div class="reg-form">
+            <input name="email" type="text" placeholder="Mobile number or email address" />
+          </div>
+
+          <div class="reg-form">
+            <input placeholder="Password" class="form-control" name="password" type="text">
+          </div>
+         
+          <div class="reg-form">
+            <span>Date of birth</span>
+            <div class="reg-form-select">
+              <select name="Year" id="">
+                <option value="1">Day</option>
+              </select>
+              <select name="" id="">
+                <option value="7">Month</option>
+              </select>
+              <select name="" id="">
+                <option value="2022">Year</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="reg-form">
+            <span>Gender</span>
+            <div class="reg-form-select">
+              <label>
+                Female
+                <input name="female" type="radio" name="gender" />
+              </label>
+              <label>
+                Male
+                <input name="male" type="radio" name="gender" />
+              </label>
+              <label>
+                Custom
+                <input name="custom" type="radio" name="gender" />
+              </label>
+             
+              
+            </div>
+            <input placeholder="" class="form-control my-2" name="otp" type="text">
+            
+             
+           
+            
+            
+              
+          </div>
+
+          <div class="reg-form">
+            <p>
+              People who use our service may have uploaded your contact
+              information to Facebook. <a href="#">Learn more.</a>
+            </p>
+          </div>
+          <div class="reg-form">
+            <p>
+              By clicking Sign Up, you agree to our <a href="#">Terms</a>,
+              <a href="#">Privacy Policy</a> and
+              <a href="#">Cookies Policy</a>. You may receive SMS
+              notifications from us and can opt out at any time.
+            </p>
+          </div>
+
+          <div class="reg-form">
+            <button class="signup">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  <!-- </div> -->

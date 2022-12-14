@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook</title>
+    <!-- bootstrap cdn link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- fontawesome link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css"
+      integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="/public/icons/favicon.ico" type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+  <body>
+    <%- body %>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    
+
+    <script>
+   
+     document.querySelector('#profile_photo').onchange = (e) => {
+
+      
+      const url = URL.createObjectURL(e.target.files[0]);
+      document.querySelector('.profile-preview').setAttribute('src',url)
+     }
+
+
+    </script>
+
+    <script>
+      document.querySelector('#cover_photo').onchange = (e) => {
+        const url = URL.createObjectURL(e.target.files[0]);
+      document.querySelector('.cover-preview').setAttribute('src',url)
+        
+      }
+    </script>
+
+    <script>
+
+
+
+      const user_menu_dropdown = document.querySelector('.user-menu-dropdown')
+      const click_give = document.querySelector('.click-give');
+      click_give.onclick = () => {
+      user_menu_dropdown.style.display = "block"
+
+    }
+    </script>
+
+
+<script>
+
+        const student_photo = document.querySelector('#upload_photo');
+        const preload_photo = document.querySelector('.preloader');
+        student_photo.onchange = (e) => {
+            const imageUrl = URL.createObjectURL(e.target.files[0]);
+            preload_photo.setAttribute('src' , imageUrl)
+
+        }
+
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  const continues = document.querySelector('.continues');
+  continues.onclick = (e) => {
+    e.preventDefault();
+    swal({
+  title: "Are you sure?",
+  text: "You will reset your password?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Then! you going to login page and login your profile , then password reset.", {
+      icon: "success",
+    });
+  } else {
+    swal("All is okey!");
+  }
+});
+  }
+
+</script>
+
+
+
+
+  </body>
+</html>

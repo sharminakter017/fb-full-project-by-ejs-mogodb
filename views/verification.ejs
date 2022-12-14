@@ -1,0 +1,52 @@
+<div class="containers veri-card">
+  <div class="card w-25 shadow px-2">
+    <div class="card-body">
+      <div class="card-header">
+        <h4 class="vv">Resend verify link</h4>
+        <% if (message) { %>
+        <!-- alert start-->
+        <div
+          class="alert alert-success alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>verify now</strong> <%= message %>
+          <a class="btn btn-success" href="/verification">resend link</a>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <!-- alert end-->
+
+        <% } %>
+      </div>
+
+      <form action="/verification" method="post">
+        <div class="my-3">
+          <input
+            class="from-control w-100 cn"
+            name="name"
+            type="text"
+            placeholder="name"
+          />
+        </div>
+
+        <div class="my-3">
+          <input
+            class="from-control w-100 cn"
+            name="email"
+            type="email"
+            placeholder="resend email"
+          />
+        </div>
+
+        <div class="my-3">
+          <input class="resend" type="submit" value="Send Verification Link" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

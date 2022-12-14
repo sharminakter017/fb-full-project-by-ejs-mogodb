@@ -1,0 +1,22 @@
+<div class="user info">
+  <% if (user.photo) { %>
+    <img  src="/public/media/users/<%= user.photo %>" alt="">
+<% } else { %>
+<img  src="/images/avatar.png" alt="">
+    <% } %>
+    <h3><%= user.name %> </h3>
+
+   
+        <div class="alert alert-success alert-dismissible fade show shr" role="alert">
+             <p><%= user.email %> </p> 
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+          </div>
+        
+      
+
+
+
+
+    
+   
+</div>

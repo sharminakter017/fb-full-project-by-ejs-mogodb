@@ -1,0 +1,69 @@
+<div class="profile-body">
+  <div class="profile-wraper">
+    <div class="profile-info">
+      <%- include ('./layouts/info.ejs') %>
+      <hr />
+
+      <%- include ('./layouts/menu.ejs') %>
+    </div>
+    <div class="profile-box">
+      <div class="box-content">
+        <h2>Change Photo</h2>
+        <!-- alert start-->
+        <% if (message) { %>
+        <div
+          class="alert alert-success alert-dismissible fade show"
+          role="alert"
+        >
+          <%= message %>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <% } %>
+
+        <!-- alert end-->
+        <hr />
+        <div class="form-wraper">
+          <form
+            action="/photo-update"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <label for="">Select a Photo</label>
+
+              <div class="profile-photo">
+                <% if (user.photo) { %>
+                <img
+                  class="profile-preview"
+                  src="/public/media/users/<%= user.photo %>"
+                  alt=""
+                />
+                <% } else { %>
+                <img class="profile-preview" src="/images/avatar.png" alt="" />
+                <% } %>
+              </div>
+              <label class="upload">
+                <i class="fas fa-camera"></i>
+                <input
+                  id="profile-photo"
+                  name="profile"
+                  style="display: none"
+                  type="file"
+                />
+              </label>
+            </div>
+            <div class="form-group">
+              <button class="baaton31">Change</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
